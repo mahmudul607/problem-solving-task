@@ -25,7 +25,7 @@ const products = [
     }
   
    
-    else if (selectedPriceRange[0] > 0) {
+    else if (selectedPriceRange[0] >= 1 & selectedPriceRange[1] > 1) {
       filteredProducts = filteredProducts.filter(
         product => product.price >= selectedPriceRange[0] && product.price <= selectedPriceRange[1]
       );
@@ -62,8 +62,8 @@ const products = [
     filterProducts(); 
   }
   
-  applyCategoryFilter('game');
+//   applyCategoryFilter('game');
 
-  applyPriceFilter(50, 150);  
-  applyNameFilter('Shirt') ;   
+  applyPriceFilter(1, 200);  
+//   applyNameFilter('Shirt') ;   
   
