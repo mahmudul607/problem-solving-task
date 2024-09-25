@@ -22,20 +22,24 @@ const products = [
     if (selectedCategory) {
       filteredProducts = filteredProducts.filter(product => product.category.toLowerCase() === selectedCategory.toLowerCase());
       console.log(selectedCategory)
+      
     }
+    else if(selectedName){
+        filteredProducts = filteredProducts.filter(product => product.name.toLowerCase() === selectedName.toLowerCase())
+        console.log(selectedName)
+
+      
+    
+      }
   
    
-    else if (selectedPriceRange[0] >= 1 & selectedPriceRange[1] > 1) {
+   if (selectedPriceRange[0] >= 1 & selectedPriceRange[1] > 1) {
       filteredProducts = filteredProducts.filter(
         product => product.price >= selectedPriceRange[0] && product.price <= selectedPriceRange[1]
       );
       console.log(selectedPriceRange)
     }
-    else if(selectedName){
-      filteredProducts = filteredProducts.filter(product => product.name.toLowerCase() === selectedName.toLowerCase())
-      console.log(selectedName)
-  
-    }
+    
   
   
   
@@ -62,8 +66,9 @@ const products = [
     filterProducts(); 
   }
   
-//   applyCategoryFilter('game');
+  applyCategoryFilter('game');
 
-  applyPriceFilter(0, 0);  
+    
 //   applyNameFilter('Shirt') ;   
+  applyPriceFilter(50, 500);
   
